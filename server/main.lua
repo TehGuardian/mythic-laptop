@@ -31,7 +31,7 @@ function defaultApps()
 end
 
 function hasValue(tbl, value)
-	for k, v in ipairs(tbl) do
+	for _, v in ipairs(tbl) do
 		if v == value or (type(v) == "table" and hasValue(v, value)) then
 			return true
 		end
@@ -241,7 +241,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
 			local perms = char:GetData("LaptopPermissions")
 
 			for k, v in pairs(data) do
-				for k2, v2 in ipairs(v) do
+				for _, v2 in ipairs(v) do
 					if not perms[k][v2] then
 						cb(false)
 						return

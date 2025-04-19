@@ -6,7 +6,7 @@ LAPTOP = {
 		local charJobPerms = {}
 		local jobData = {}
 		if charJobs and #charJobs > 0 then
-			for k, v in ipairs(charJobs) do
+			for _, v in ipairs(charJobs) do
 				local perms = GlobalState[string.format(
 					"JobPerms:%s:%s:%s",
 					v.Id,

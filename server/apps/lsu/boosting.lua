@@ -569,7 +569,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
             and _boosting[team.ID].state == 2
             and (not _boosting[team.ID].trackerCooldown or GetGameTimer() >= _boosting[team.ID].trackerCooldown)
         then
-            Citizen.SetTimeout(500, function()
+            SetTimeout(500, function()
                 Callbacks:ClientCallback(source, "Laptop:LSUnderground:Boosting:TrackerHacker", {}, function(using, success)
                     if using and _boosting[team?.ID] then
 
@@ -577,7 +577,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
 
                         if success then
                             local newValue = slot.CreateDate - (60 * 60 * 12)
-    
+
                             if (os.time() - itemData.durability >= newValue) then
                                 Inventory.Items:RemoveId(slot.Owner, slot.invType, slot)
                             else
@@ -1000,7 +1000,7 @@ LAPTOP.LSUnderground.Boosting = {
                         {}
                     )
 
-                    Citizen.SetTimeout(20000, function()
+                    SetTimeout(20000, function()
                         if DoesEntityExist(spawnedVehicle) then
                             vehState.Locked = true
                             SetVehicleDoorsLocked(spawnedVehicle, 2)
@@ -1095,13 +1095,13 @@ LAPTOP.LSUnderground.Boosting = {
                                 cChar:GetData("CryptoWallet"), 
                                 math.floor(_boosting[teamId].price + earnedCrypto)
                             )
-    
+
                             Logger:Info("Boosting", string.format("%s [%s %s (%s)] Completed Class %s Contract (%s)%s. Rep Gained: %s Crypto Gained: %s", cChar:GetData("Profiles")?.redline?.name, cChar:GetData("First"), cChar:GetData("Last"), cChar:GetData("SID"), _boosting[teamId].vehicleData.class, _boosting[teamId].vehicleData.label, _boosting[teamId].vehicleData.rewarded and " (Manually Created)" or "", earnedRep, earnedCrypto))
                         end
                     end
                 end
 
-                Citizen.SetTimeout(60 * 1000, function()
+                SetTimeout(60 * 1000, function()
                     Vehicles:Delete(veh, function(success) end)
                 end)
             end
