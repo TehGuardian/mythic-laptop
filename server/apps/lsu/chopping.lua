@@ -72,7 +72,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
 				end
 			end
 
-			for k, v in pairs(Fetch:AllCharacters()) do
+			for k, v in pairs(Fetch:All()) do
 				if v ~= nil then
 					local dutyData = Jobs.Duty:Get(v:GetData("Source"))
 					if (
@@ -125,7 +125,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
 				end
 			end
 
-			for k, v in pairs(Fetch:AllCharacters()) do
+			for k, v in pairs(Fetch:All()) do
 				if v ~= nil then
 					local dutyData = Jobs.Duty:Get(v:GetData("Source"))
 					if (
@@ -166,7 +166,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
 				end
 			end
 
-			for k, v in pairs(Fetch:AllCharacters()) do
+			for k, v in pairs(Fetch:All()) do
 				if v ~= nil then
 					local dutyData = Jobs.Duty:Get(v:GetData("Source"))
 					if (
@@ -675,7 +675,7 @@ LAPTOP.LSUnderground.Chopping = {
 							end
 						end
 
-						for k, v in pairs(Fetch:AllCharacters()) do
+						for k, v in pairs(Fetch:All()) do
 							if v ~= nil then
 								local dutyData = Jobs.Duty:Get(v:GetData("Source"))
 								if (
@@ -726,7 +726,7 @@ LAPTOP.LSUnderground.Chopping = {
 							end
 						end
 
-						for k, v in pairs(Fetch:AllCharacters()) do
+						for k, v in pairs(Fetch:All()) do
 							if v ~= nil then
 								local dutyData = Jobs.Duty:Get(v:GetData("Source"))
 								if (

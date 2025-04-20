@@ -296,7 +296,7 @@ AddEventHandler("Laptop:Server:RegisterCallbacks", function()
             for k, v in ipairs(boostingContracts) do
                 if v.id == data.id then
                     local found = nil
-                    for _, c in pairs(Fetch:AllCharacters()) do
+                    for _, c in pairs(Fetch:All()) do
                         if c ~= nil then
                             local profiles = c:GetData("Profiles")
                             if profiles?.redline?.name == data.alias then
